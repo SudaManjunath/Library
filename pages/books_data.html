@@ -1,0 +1,23 @@
+{%extends "navbar.html"%}
+{%block content%}
+<div class="container form-control">
+    <div class="row">
+        <div class="col">
+            <a href="{%url 'book_entry'%}">New Book Entry</a>
+        </div>
+    </div>
+    {%for i in data%}
+    <div class="row">
+        <div class="col">
+            {{i.Book_name}}
+        </div>
+        <div class="col">
+            {{i.Branch}}
+        </div>
+        <div class="col">
+            {{i.No_of_books}}
+        </div>
+    </div>
+    {%endfor%}
+</div>
+{%endblock%}

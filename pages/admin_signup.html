@@ -1,0 +1,62 @@
+{%extends 'navbar.html'%}
+
+{%block content%}
+
+
+
+
+<!-- Register Page -->
+<form action="" method="POST" > {% csrf_token %}
+
+<div class="" style="margin-top: 100px; box-shadow:5px"><br>
+  <div class="row">
+      <div class="col-4">
+          
+      </div>
+      <div class="col-4">
+        <div class="container form-control shadow">
+          <div class="row">
+            <div class="col">
+              <div class="row">
+                <div class="col-2">
+
+                </div>
+                <div class="col-8">
+                  <h1 class="form-control" align="center" style="color:blueviolet; border:2px solid; ">Admin Signup</h1>
+                </div>
+                <div class="col-2">
+
+                </div>
+              </div>
+              
+              <label for="Name"> Name</label><input type="text" name="name" id="name" class="form-control shadow">
+              <label for="email">Email</label><input type="email" name="email" id="email" class="form-control shadow">
+              <label for="password">Password</label><input type="password" name="pass" id="password" class="form-control shadow">
+              <p align="right"><br>
+                <a href="{% url 'admin_login'%}" class="shadow" style="text-decoration: None;"> Admin Login</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="Submit" value="Submit" class="btn btn-primary shadow" onclick="return validate()" />
+              </p>  
+            </div>
+          </div>
+        </div>
+         
+      </div>
+      <div class="col-4">
+
+      </div>
+  </div>
+</div>
+</form>
+<script type="text/javascript">
+    function validate()
+    {
+      var password= document.getElementById('password').value;
+      var re_password= document.getElementById('re_password').value;
+      if (password!=re_password)
+      {
+          alert("Password do not match");
+          return false;
+      }
+      return true;
+    }
+  </script>
+{%endblock%}

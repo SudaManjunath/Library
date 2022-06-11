@@ -1,0 +1,51 @@
+{%extends 'navbar.html'%}
+
+{%block content%}
+    <form action="" method="POST">{%csrf_token%}
+        <div class=" " style="margin-top: 100px;">
+            <div class="row">
+                <div class="col-4">
+                    
+                </div>
+                <div class="col-4 ">
+                    
+                    <div class="container form-control shadow">
+                        <div class="row">
+                            <div class="col-2">
+    
+                            </div>
+                            <div class="col-8">
+                                <h1 class="form-control shadow"  align="center" style="color:blueviolet; border:2px solid; ">Admin Login</h1>
+                            </div>
+                            <div class="col-2">
+    
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label for="email">Email</label><input type="text" name="email" id="email" class="form-control shadow">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label for="password">Password</label><input type="password" name="password" id="password" class="form-control shadow">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p align="right"><br>
+                                    <a href="{% url 'admin_signup'%}" style="text-decoration: None;"> Admin Login</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="Submit" value="Submit" class="btn btn-primary shadow" onclick="return validate()" />
+                                  </p> 
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-4">
+
+                </div>
+            </div>
+            
+        </div>
+    </form>
+{%endblock%}
