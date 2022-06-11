@@ -26,12 +26,10 @@ urlpatterns = [
     path("book_entry",views.book_entry,name="book_entry"),
     path('update/<int:id>',views.book_update,name='book_update'),
     path('delete/<int:id>',views.book_delete,name="delete"),
-
-
-     path("test1",views.ListBookAPIView.as_view(),name="todo_list"),
-    path("create/", views.CreateBookAPIView.as_view(),name="todo_create"),
-    path("updateapi/<int:pk>/",views.UpdateBookAPIView.as_view(),name="update_todo"),
-    path("deleteapi/<int:pk>/",views.DeleteBookAPIView.as_view(),name="delete_todo")
+    path("list",views.ListBookAPIView.as_view(),name="todo_list"),
+    path("api_create_book/", views.CreateBookAPIView.as_view(),name="todo_create"),
+    path("api_update_book/<int:pk>/",views.UpdateBookAPIView.as_view(),name="update_todo"),
+    path("api_delete_book/<int:pk>/",views.DeleteBookAPIView.as_view(),name="delete_todo")
 
 ]
 
