@@ -1,0 +1,51 @@
+{%extends "navbar.html"%}
+{%block content%}
+
+
+<div class="container form-control" style="margin-top: 50px;">
+    <div class="row">
+        <div class="col-2">
+            <a href="{%url 'book_entry'%}"  class="form-control" style="text-decoration: None;">New Book Entry</a>
+        </div>
+        <div class="col" align="center">
+            <h1 style="color:blueviolet; border:2px solid; " class="form-control">Books List</h1>
+        </div>
+        <div class="col-2">
+           {%if count%} <h1  align="center" style="color:blueviolet; border:2px solid; "  class="form-control">{{count}}</h1>{%endif%}
+        </div>
+    </div>
+</div><br>
+
+<div class="container form-control" >
+   
+
+   <div class="container form-control">
+    <div class="row">
+        <div class="col" align="center">
+            Book Name
+        </div>
+         <div class="col" align="center">
+            Branch
+        </div> 
+        <div class="col" align="center">
+            No of books
+        </div> 
+       
+    </div>
+        {% for i in books %}
+        <div class="row">
+            <div class="col" align="center">
+                {{i.Book_name}}
+            </div>
+            <div class="col" align="center">
+                {{i.Branch}}
+            </div>
+            <div class="col" align="center">
+                {{i.No_of_books}}
+            </div>
+            
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{%endblock%}

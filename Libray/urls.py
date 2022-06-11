@@ -20,7 +20,8 @@ from App1 import views
 from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.admin_signup,name="admin_signup"),
+    path("",views.booklist,name="bookslist"),
+    path('admin_singup',views.admin_signup,name="admin_signup"),
     path("admin_login",views.admin_login,name="admin_login"),
     path("book_data",views.books_data,name="book_data"),
     path("book_entry",views.book_entry,name="book_entry"),

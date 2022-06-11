@@ -70,6 +70,16 @@ def book_delete(request, id):
    emp.delete()
    return render(request,"books_data.html",{})
 
+# Get books list views Students 
+def booklist(request):
+    count=0
+    books=Books.objects.all()
+    for i in books:
+        count+=1
+    print(books)
+    return render(request,"books_list.html",{"books":books,"count":count})
+
+
 # Create your views here.
 class ListBookAPIView(ListAPIView):
     """This endpoint list all of the available todos from the database"""
