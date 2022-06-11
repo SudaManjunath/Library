@@ -11,7 +11,7 @@
             <h1 style="color:blueviolet; border:2px solid; " class="form-control">Books List</h1>
         </div>
         <div class="col-2">
-
+            <h1  align="center" style="color:blueviolet; border:2px solid; "  class="form-control">{{count}}</h1>
         </div>
     </div>
 </div><br>
@@ -21,9 +21,6 @@
 
    <div class="container form-control">
     <div class="row">
-        <div class="col-1" align="center">
-            S.no
-        </div>
         <div class="col-4" align="center">
             Book Name
         </div>
@@ -42,9 +39,6 @@
     </div>
         {% for i in books %}
         <div class="row">
-            <div class="col-1" align="center">
-                {{i.id}}
-            </div>
             <div class="col-4" align="center">
                 {{i.Book_name}}
             </div>
@@ -55,10 +49,10 @@
                 {{i.No_of_books}}
             </div>
             <div class="col" align="center">
-                <a href="#" style="text-decoration: None;" >Edit</a>
+                <a href="update/{{ i.id }}" style="text-decoration: None;" >Edit</a>
             </div>
             <div class="col" align="center">
-                <a href="#" style="text-decoration: None;" >Delete</a>
+                <a href="delete/{{ i.id }}" style="text-decoration: None;" >Delete</a>
             </div>
         </div>
         {% endfor %}

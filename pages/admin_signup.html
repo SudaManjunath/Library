@@ -33,7 +33,15 @@
               <label for="email">Email</label><input type="email" name="email" id="email" class="form-control shadow">
               <label for="password">Password</label><input type="password" name="pass" id="password" class="form-control shadow">
               <p align="right"><br>
-                <a href="{% url 'admin_login'%}" class="shadow" style="text-decoration: None;"> Admin Login</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="Submit" value="Submit" class="btn btn-primary shadow" onclick="return validate()" />
+                <div class="row">
+                  <div class="col-5">
+                    <a href="{% url 'admin_login'%}" class="form-control shadow" style="text-decoration: None;"> Admin Login</a>
+                  </div>
+                  <div class="col-7" align="right">
+                    <input type="Submit" value="Submit" class="btn btn-primary shadow" onclick="return validate()" />
+                  </div>
+                </div>
+               
               </p>  
             </div>
           </div>

@@ -30,11 +30,19 @@
                             <div class="col">
                                 <label for="password">Password</label><input type="password" name="password" id="password" class="form-control shadow">
                             </div>
-                        </div>
+                        </div><br>
                         <div class="row">
                             <div class="col">
-                                <p align="right"><br>
-                                    <a href="{% url 'admin_signup'%}" style="text-decoration: None;"> Admin Login</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="Submit" value="Submit" class="btn btn-primary shadow" onclick="return validate()" />
+                                <div class="row">
+                                    <div class="col-5">
+                                        <a href="{% url 'admin_signup'%}" style="text-decoration: None;" class="form-control"> Admin Login</a>
+                                    </div>
+                                    <div class="col-7" align="right" >
+                                        <input  type="Submit" value="Submit" class="btn btn-primary shadow" onclick="return validate()" />
+                                    </div>
+                                </div>
+                                <p ><br>
+                                   
                                   </p> 
                             </div>
                         </div>

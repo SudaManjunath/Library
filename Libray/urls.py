@@ -23,7 +23,16 @@ urlpatterns = [
     path('',views.admin_signup,name="admin_signup"),
     path("admin_login",views.admin_login,name="admin_login"),
     path("book_data",views.books_data,name="book_data"),
-    path("book_entry",views.book_entry,name="book_entry")
+    path("book_entry",views.book_entry,name="book_entry"),
+    path('update/<int:id>',views.book_update,name='book_update'),
+    path('delete/<int:id>',views.book_delete,name="delete"),
+
+
+     path("test1",views.ListBookAPIView.as_view(),name="todo_list"),
+    path("create/", views.CreateBookAPIView.as_view(),name="todo_create"),
+    path("updateapi/<int:pk>/",views.UpdateBookAPIView.as_view(),name="update_todo"),
+    path("deleteapi/<int:pk>/",views.DeleteBookAPIView.as_view(),name="delete_todo")
+
 ]
 
 
