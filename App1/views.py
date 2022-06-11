@@ -55,7 +55,13 @@ def book_entry(request):
 # Update Book data
 def book_update(request, id):
     emp = Books.objects.get(id = id)
-    
+    if request.method=="POST":
+        emp.Book_name=request.POST.get('book_name')
+        emp.Branch=request.POST.get("branch")
+        emp.No_of_books=request.POST.get('no_books')
+        print(request.POST.get('no_books'))
+        emp.save()
+        return redirect("book_data")
     return render(request,"update_book_details.html",{"data":emp})
 
 # Delete Book data
