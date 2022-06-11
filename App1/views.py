@@ -20,17 +20,23 @@ def admin_login(request):
                     return redirect("book_data")
     return render(request,"admin_login.html",{})
 def books_data(request):
-    if request.method=="POST":
-        books=Books.objects.all()
-        return render(request,"books_data.html",{"books":books})
-
-    return render(request,"books_data.html",{})
+    
+    books=Books.objects.all()
+    print(books)
+    return render(request,"books_data.html",{"books":books})
 def admin_home(request):
 
     return render(request,"admin_home.html",{})
 def book_entry(request):
     if request.method=="POST":
-        book=Books.objects.create(Book_name=request.POST[""])
-        msg="Succes fully added.."
-        return render(request,"books_entry.html",{"msg":msg})
+        if request.POST["book_name"]!='' and request.POST.get('book_branch', False)!='' and request.POST["no_of_pages"]!='':
+            books_data=Books.objects.all()
+            for i in books_data:
+                if i.Book_name==request.POST["book_name"]:
+                    msg1="Book alerdy present..."
+                    return render(request,"books_entry.html",{"msg1":msg1})
+            book=Books.objects.create(Book_name=request.POST["book_name"],Branch=request.POST.get('book_branch', False),No_of_books=request.POST["no_of_pages"])
+            book.save()
+            msg="Succes fully added.."
+            return render(request,"books_entry.html",{"msg":msg})
     return render(request,"books_entry.html",{})

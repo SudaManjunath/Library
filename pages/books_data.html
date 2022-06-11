@@ -1,23 +1,67 @@
 {%extends "navbar.html"%}
 {%block content%}
-<div class="container form-control">
+
+
+<div class="container form-control" style="margin-top: 50px;">
     <div class="row">
-        <div class="col">
-            <a href="{%url 'book_entry'%}">New Book Entry</a>
+        <div class="col-2">
+            <a href="{%url 'book_entry'%}"  class="form-control" style="text-decoration: None;">New Book Entry</a>
+        </div>
+        <div class="col" align="center">
+            <h1 style="color:blueviolet; border:2px solid; " class="form-control">Books List</h1>
+        </div>
+        <div class="col-2">
+
         </div>
     </div>
-    {%for i in data%}
+</div><br>
+
+<div class="container form-control" >
+   
+
+   <div class="container form-control">
     <div class="row">
-        <div class="col">
-            {{i.Book_name}}
+        <div class="col-1" align="center">
+            S.no
         </div>
-        <div class="col">
-            {{i.Branch}}
+        <div class="col-4" align="center">
+            Book Name
         </div>
-        <div class="col">
-            {{i.No_of_books}}
+         <div class="col-2" align="center">
+            Branch
+        </div> 
+        <div class="col-2" align="center">
+            No of books
+        </div> 
+        <div class="col" align="center">
+            Edit
+        </div>
+        <div class="col" align="center">
+            Delete
         </div>
     </div>
-    {%endfor%}
+        {% for i in books %}
+        <div class="row">
+            <div class="col-1" align="center">
+                {{i.id}}
+            </div>
+            <div class="col-4" align="center">
+                {{i.Book_name}}
+            </div>
+            <div class="col-2" align="center">
+                {{i.Branch}}
+            </div>
+            <div class="col-2" align="center">
+                {{i.No_of_books}}
+            </div>
+            <div class="col" align="center">
+                <a href="#" style="text-decoration: None;" >Edit</a>
+            </div>
+            <div class="col" align="center">
+                <a href="#" style="text-decoration: None;" >Delete</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
 {%endblock%}
