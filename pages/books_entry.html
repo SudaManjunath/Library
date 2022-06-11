@@ -2,37 +2,39 @@
 
 {%block content%}
 <form action="" method="post" style="margin-top: 100px;">{%csrf_token%}
-    <div class="container form-control">
+    <div class="container ">
+        
         <div class="row">
-            <div class="col-1">
-                <a href="{%url 'book_data'%}" style="text-decoration: None;" class="form-control shadow">Back</a>
+            <div class="col">
+               
+            </div>
+            <div class="col-6 ">
+                <div class="container form-control">
+                    <div class="row ">
+                        <div class="col-2">
+                            <a href="{%url 'book_data'%}" style="text-decoration: None;" class="form-control shadow">Back</a>
+                        </div>
+                        <div class="col-5">
+                            <h1 class="form-control shadow" align="center" size="5px" style="color: rgb(249, 248, 239); background-color:   rgb(164, 94, 10); ">New Book Entry </h1>
+                        </div>
+                        <div class="col-5">
+                            {% if msg%}<h5 style="color: rgb(26, 233, 26);  " class="form-control shadow">{{msg}}</h5> {%endif%}{%if msg1%}<h5 style="color: rgb(212, 14, 24);  " class="form-control shadow">{{msg1}}</h5>{%endif%}
+                        </div>
+                    </div>
+                    <label for="book_name">Book Name</label><input type="text" name="book_name" id="book_name" class="form-control shadow">
+                    <label for="branch">Branch (for example "Civil","EEE","CSE","ECE")</label><input type="text" name="book_branch" id="book_branch" class="form-control shadow">
+                    <label for="no_of_pages">No Of Books</label> <input type="number" name="no_of_pages" id="no_of_pages" class="form-control shadow">
+                    <p align="right"><br>
+                        <input type="Submit" value="Submit" class="btn btn-primary shadow" onclick="return validate()" />
+                      </p> 
+                </div>
+                
             </div>
             <div class="col">
-                <h1 class="form-control shadow" align="center" size="5px" style="color: rgb(249, 248, 239); background-color:   rgb(164, 94, 10); ">New Book Entry </h1>
-            </div>
-            <div class="col-3">
-                {% if msg%}
-                <h5 style="color: rgb(26, 233, 26);  " class="form-control shadow">{{msg}}</h5> {%endif%}{%if msg1%}<h5 style="color: rgb(212, 14, 24);  " class="form-control shadow">{{msg1}}</h5>{%endif%}
+
             </div>
         </div>
-        <div class="row">
-            <div class="col-6">
-                <label for="book_name">Book Name</label><input type="text" name="book_name" id="book_name" class="form-control shadow">
-            </div>
-            <div class="col-6">
-                <label for="branch">Branch (for example "Civil","EEE","CSE","ECE")</label><input type="text" name="book_branch" id="book_branch" class="form-control shadow">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-6">
-               <label for="no_of_pages">No Of Books</label> <input type="number" name="no_of_pages" id="no_of_pages" class="form-control shadow">
-            </div>
-            <div class="col-6">
-                <p align="right"><br>
-                    <input type="Submit" value="Submit" class="btn btn-primary shadow" onclick="return validate()" />
-                  </p> 
-            </div>
-        </div>
+        
     </div>
 </form>
 {%endblock%}
