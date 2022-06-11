@@ -30,7 +30,6 @@ urlpatterns = [
     path("api_create_book/", views.CreateBookAPIView.as_view(),name="todo_create"),
     path("api_update_book/<int:pk>/",views.UpdateBookAPIView.as_view(),name="update_todo"),
     path("api_delete_book/<int:pk>/",views.DeleteBookAPIView.as_view(),name="delete_todo")
-
 ]
 
 
