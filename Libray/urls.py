@@ -32,7 +32,7 @@ urlpatterns = [
     path("api_update_book/<int:pk>/",views.UpdateBookAPIView.as_view(),name="update_todo"),
     path("api_delete_book/<int:pk>/",views.DeleteBookAPIView.as_view(),name="delete_todo")
 ]
-
+'''tesr'''
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
